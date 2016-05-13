@@ -1,4 +1,4 @@
-# Laravel 5 Friendships [![Build Status](https://travis-ci.org/hootlex/laravel-friendships.svg?branch=v1.0.12)](https://travis-ci.org/hootlex/laravel-friendships) [![Version](https://img.shields.io/packagist/v/hootlex/laravel-friendships.svg?style=flat)](https://packagist.org/packages/hootlex/laravel-friendships)  [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
+# Laravel 5 Friendships [![Build Status](https://travis-ci.org/hootlex/laravel-friendships.svg?branch=v1.0.15)](https://travis-ci.org/hootlex/laravel-friendships) [![Version](https://img.shields.io/packagist/v/hootlex/laravel-friendships.svg?style=flat)](https://packagist.org/packages/hootlex/laravel-friendships)  [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
 
 
 This package gives Eloqent models the ability to manage their friendships.
@@ -43,7 +43,7 @@ class User extends Model
 ```
 
 ## How to use 
-[Check the Test file to see the package in action](https://github.com/hootlex/laravel-friendships/blob/master/tests/FriedshipsTest.php)
+[Check the Test file to see the package in action](https://github.com/hootlex/laravel-friendships/blob/master/tests/FriendshipsTest.php)
 
 #### Send a Friend Request
 ```php
@@ -95,16 +95,6 @@ $user->hasBlocked($recipient);
 $user->isBlockedBy($recipient);
 ```
 
-#### Get Friends (It returns a collection of friend models not friendships, for example User)
-```php
-$user->getFriends();
-```
-
-#### Get Friends Paginated
-```php
-$user->getFriends($perPage = 20);
-```
-
 #### Get a single friendship
 ```php
 $user->getFriendship($recipient);
@@ -143,4 +133,21 @@ $user->getFriendRequests();
 #### Get the number of Friends 
 ```php
 $user->getFriendsCount();
+```
+
+
+### To get a collection of friend models (ex. User) you can use the following methods
+#### Get Friends
+```php
+$user->getFriends();
+```
+
+#### Get Friends Paginated
+```php
+$user->getFriends($perPage = 20);
+```
+
+#### Get Friends of Friends
+```php
+$user->getFriendsOfFriends($perPage = 20);
 ```
